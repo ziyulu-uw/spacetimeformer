@@ -65,7 +65,7 @@ class CSVTimeSeries:
                 ignore_cols.remove(self.time_col_name)
             raw_df.drop(columns=ignore_cols, inplace=True)
 
-        time_df = pd.to_datetime(raw_df[self.time_col_name], format="%Y-%m-%d %H:%M")
+        time_df = pd.to_datetime(raw_df[self.time_col_name], format="%Y-%m-%d")
         df = stf.data.timefeatures.time_features(
             time_df,
             raw_df,
